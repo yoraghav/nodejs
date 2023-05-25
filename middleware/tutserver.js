@@ -17,7 +17,7 @@ const func = async (msg,logname)=>{
 }
 
 const logger = (req,res,next)=>{
-    func(`${req.method}\t${req.headers.origin}\t${req.method}`,'reqlogs,txt')
+    func(`${req.method}\t${req.headers.origin}\t${req.method}`,'reqlogs.txt')
     next()
 }
 module.exports = {logger,func};  

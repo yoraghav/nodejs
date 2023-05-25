@@ -13,7 +13,11 @@ const authlogin = async(req,res)=>{
     if(!finduser) return res.status(401).json({'message':'user doesnt exist!'})
     try{
         const match = await bcrypt.compare(pwd,finduser.password)
-        if(!match) return res.status(401).json({'message':'password is wrong!'})
+        if(!match){
+            // alert('ifnsifmeo')
+            return res.redirect('/login')
+            // return res.status(401).json({'message':'password is wrong!'})
+        } 
         res.status(201).json({'success':`LOGIN ${user} successful!`})
 
     } catch(err){
