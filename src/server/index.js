@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
 app.use('/',express.static(path.join(dirpath,'public')))
-app.use('/subdir',express.static(path.join(dirpath,'public')))
+app.use('/subdir',express.static(path.join(dirpath,'public2')))
 
 app.use('/',require('./../../routes/root'))
 app.use('/register',require('./../../routes/register'))

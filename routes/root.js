@@ -14,6 +14,6 @@ route.get('/new-page(.html)?',(req,res)=>{
 
 route.get('/old-page(.html)?',(req,res)=>{
     res.redirect(301,'/new-page.html')
-})
+}) 
 
 module.exports = route;

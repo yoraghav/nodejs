@@ -6,7 +6,8 @@ const path = require('path')
 const bcrypt = require('bcrypt')
 
 const authlogin = async(req,res)=>{
-    const {user,pwd} = req.body;
+    const user = req.body.name;
+    const pwd = req.body.password;
     if(!user || !pwd) return res.status(400).json({'message':'Username and password are required'})
     const finduser = usersDB.users.find(person=>person.username===user);
     if(!finduser) return res.status(401).json({'message':'user doesnt exist!'})
