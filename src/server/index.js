@@ -7,8 +7,8 @@ const {logger} = require('../../middleware/tutserver')
 const errorhandler = require('../../middleware/errorhandler')
 const dirpath = path.join(__dirname,'..','..');
 const corsOptions = require(path.join(dirpath,'config','corsOptions'))
-const firstmathlab = require('raghavscalcpack')
-const calc = firstmathlab.calc
+const calc = require('raghavscalcpack').firstmathlab
+// const calc = firstmathlab
 
 app.use(logger)
 app.use(cors(corsOptions))
@@ -32,4 +32,4 @@ app.get('/*',(req,res)=>{
 })
 app.use(errorhandler)
 
-app.listen(8080,()=>{console.log('server running!');console.log(calc('add',2,3))});
+app.listen(8080,()=>{console.log('server running!');console.log(calc('sub',5,4))});
