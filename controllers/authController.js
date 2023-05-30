@@ -14,7 +14,6 @@ const authlogin = async(req,res)=>{
     try{
         const match = await bcrypt.compare(pwd,finduser.password)
         if(!match){
-            // alert('ifnsifmeo')
             return res.redirect('/login')
             // return res.status(401).json({'message':'password is wrong!'})
         } 
